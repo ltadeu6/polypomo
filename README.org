@@ -1,6 +1,6 @@
 #+TITLE: Polypomo
 
-This is a simple [[https://en.wikipedia.org/wiki/Pomodoro_Technique][Pomodoro]] module for polybar written in a 139 lines shell script. You can change the icon and the timer duration easily by editing the first 17 lines of the script
+This is a simple [[https://en.wikipedia.org/wiki/Pomodoro_Technique][Pomodoro]] module for polybar written in a 139 lines shell script. You can change the icon and the timer duration easily by editing the first 17 lines of the script [[file:polypomo.sh]]
 
 The timer can be paused and, if the process is restarted for some reason, it can continue with no problem
 
@@ -27,11 +27,11 @@ git clone https://github.com/ltadeu6/polypomo
 
 * Configuration
 
-You can edit the first 18 lines of the polypomo script
+You can edit the first 18 lines of the [[file:polypomo.sh]] script
 
 ** Changing the duration of the timer
 
-You can change the duration editing this variables on the top of the file polypomo
+You can change the duration editing this variables on the top of the [[file:polypomo.sh]]
 
 #+begin_src shell
 work_time=25;                   # Working duration
@@ -43,7 +43,7 @@ By default you will have 5 minutes breaks between each 25 min work session and h
 
 ** Changing the notification icon
 
-You can change those by editing the folowing lines on the file polypomo
+You can change those by editing the folowing lines on the [[file:polypomo.sh]]
 
 #+begin_src shell
 work_icon="messagebox_warning"
@@ -61,7 +61,7 @@ ENG="1"
 
 ** change the output glyphs on the left of the timer
 
-You can change those by editing the folowing variables on the start of the script polypomo:
+You can change those by editing the folowing variables on the start of the script [[file:polypomo.sh]]:
 
 #+begin_src shell
 # Colors used below
@@ -80,9 +80,9 @@ This is an example module configuration in the polybar config
 #+begin_src conf
 [module/pomo]
 type = custom/script
-exec = ~/.config/polybar/polypomo/polypomo
+exec = ~/.config/polybar/polypomo/polypomo.sh
 tail = true
 click-right = rm "/tmp/start_pomo"
 click-left = touch "/tmp/start_pomo"
-click-middle = ~/.config/polybar/polypomo/pause_pomo
+click-middle = ~/.config/polybar/polypomo/pause_pomo.sh
 #+end_src
