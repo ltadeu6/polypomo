@@ -1,0 +1,88 @@
+#+TITLE: Polypomo
+
+This is a simple [[https://en.wikipedia.org/wiki/Pomodoro_Technique][Pomodoro]] module for polybar written in a 139 lines shell script. You can change the icon and the timer duration easily by editing the first 17 lines of the script
+
+The timer can be paused and, if the process is restarted for some reason, it can continue with no problem
+
+* Screenshot
+
+** Pomodoro deactivated
+[[./idle.png]]
+** Work time
+[[./work.png]]
+** Time to take a break
+[[./pause.png]]
+
+* Installation
+
+#+begin_src shell
+cd ~/.config/polybar
+git clone https://github.com/ltadeu6/polypomo
+#+end_src
+
+** Dependencies
+
++ notify-send (for desktop notifications)
++ nerd-fonts (for the default glyphs, but these can be modified on the configuration)
+
+* Configuration
+
+You can edit the first 18 lines of the polypomo script
+
+** Changing the duration of the timer
+
+You can change the duration editing this variables on the top of the file polypomo
+
+#+begin_src shell
+work_time=25;                   # Working duration
+break_time=5;                   # Break duration
+lbreak_time=30;                 # Long break duration
+#+end_src
+
+By default you will have 5 minutes breaks between each 25 min work session and have a 30 minutes break after the third work session
+
+** Changing the notification icon
+
+You can change those by editing the folowing lines on the file polypomo
+
+#+begin_src shell
+work_icon="messagebox_warning"
+break_icon="dialog-information"
+lbreak_icon="dialog-information"
+#+end_src
+
+** change the language
+
+By default the notifications are displayed in English but you can change the language to Portuguese by commenting the folowing line:
+
+#+begin_src shell
+ENG="1"
+#+end_src
+
+** change the output glyphs on the left of the timer
+
+You can change those by editing the folowing variables on the start of the script polypomo:
+
+#+begin_src shell
+# Colors used below
+red="#50FA7B"
+green="#FF5555"
+# Actual variables
+WORK="%{F$red}%{F-}";
+PAUSE="%{F$green}%{F-}";
+IDLE="";
+#+end_src
+
+* Usage
+
+This is an example module configuration in the polybar config
+
+#+begin_src conf
+[module/pomo]
+type = custom/script
+exec = ~/.config/polybar/polypomo/polypomo
+tail = true
+click-right = rm "/tmp/start_pomo"
+click-left = touch "/tmp/start_pomo"
+click-middle = ~/.config/polybar/polypomo/pause_pomo
+#+end_src
