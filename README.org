@@ -34,9 +34,9 @@ You can edit the first 18 lines of the [[file:polypomo.sh]] script
 You can change the duration editing this variables on the top of the [[file:polypomo.sh]]
 
 #+begin_src shell
-work_time=25;                   # Working duration
-break_time=5;                   # Break duration
-lbreak_time=30;                 # Long break duration
+work_time=25                   # Working duration
+break_time=5                   # Break duration
+lbreak_time=30                 # Long break duration
 #+end_src
 
 By default you will have 5 minutes breaks between each 25 min work session and have a 30 minutes break after the third work session
@@ -68,9 +68,9 @@ You can change those by editing the folowing variables on the start of the scrip
 red="#50FA7B"
 green="#FF5555"
 # Actual variables
-WORK="%{F$red}%{F-}";
-PAUSE="%{F$green}%{F-}";
-IDLE="";
+WORK="%{F$red}%{F-}"
+PAUSE="%{F$green}%{F-}"
+IDLE=""
 #+end_src
 
 * Usage

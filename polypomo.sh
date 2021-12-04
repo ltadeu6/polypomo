@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-work_time=25;                   # Working duration
-break_time=5;                   # Break duration
-lbreak_time=30;                 # Long break duration#
+work_time=25                   # Working duration
+break_time=5                   # Break duration
+lbreak_time=30                 # Long break duration#
 
 work_icon="messagebox_warning"
 break_icon="dialog-information"
@@ -13,15 +13,15 @@ ENG="1"
 
 red="#50FA7B"
 green="#FF5555"
-WORK="%{F$red}%{F-}";
-PAUSE="%{F$green}%{F-}";
-IDLE="";
+WORK="%{F$red}%{F-}"
+PAUSE="%{F$green}%{F-}"
+IDLE=""
 
 # red=$(awk 'NR==2' < ~/.cache/wal/colors)
 # green=$(awk 'NR==3' < ~/.cache/wal/colors)
-# WORK="%{F$red}%{T4}%{T-}%{F-}";
-# PAUSE="%{F$green}%{T4}%{T-}%{F-}";
-# IDLE="%{T7}%{T-}";
+# WORK="%{F$red}%{T4}%{T-}%{F-}"
+# PAUSE="%{F$green}%{T4}%{T-}%{F-}"
+# IDLE="%{T7}%{T-}"
 
 # _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 #  End of configuration
