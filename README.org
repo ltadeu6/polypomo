@@ -59,7 +59,7 @@ By default the notifications are displayed in English but you can change the lan
 ENG="1"
 #+end_src
 
-** change the output glyphs of the left of the timer
+** change the output glyphs on the left of the timer
 
 You can change those by editing the folowing variables on the start of the script [[file:polypomo.sh]]:
 
